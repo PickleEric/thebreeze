@@ -1,3 +1,7 @@
+THE BREEZE
+
+'Let the breeze take you somewhere new.'
+
 A guide to local restaurants with specific identifiers of which are 
 black owned, asian owned, dog friendly, etc. 
 to show people where to support their community instead of corporate chains.
