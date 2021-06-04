@@ -1,3 +1,8 @@
+A guide to local restaurants with specific identifiers of which are 
+black owned, asian owned, dog friendly, etc. 
+to show people where to support their community instead of corporate chains.
+
+
 # To install
 Create and activate a virtual environment. Use Python3 as the interpreter. Suggest locating the venv/ directory outside of the code directory.<br />
 pip install -r requirements.txt<br />
