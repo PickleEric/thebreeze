@@ -1,0 +1,22 @@
+body {
+    background-color:black;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: white;
+  }
+  a {
+    color: rgb(70, 193, 197);
+  }
+  
+  #welcome-user-msg, #login-or-sign-up {
+    position: absolute;
+    right: 0px;
+    padding-right: 10px;
+  }
+  
+  .error {
+    background-color: #b73f08;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 2px;
+    /* font-weight: bold; */
+  }
