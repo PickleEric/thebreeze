@@ -15,28 +15,24 @@ from django.forms.models import inlineformset_factory
 def user_profile(request, user_pk):
     # Get user profile for any user on the site
     user = User.objects.get(pk=user_pk)
-    user_notes = Note.objects.filter(user=user.pk).order_by('-posted_date')
-    search_name = None
-    form = None
+    #user_notes = Note.objects.filter(user=user.pk).order_by('-posted_date')
+    #search_name = None
+    #form = None
 
-    if request.user.is_authenticated:
-        if request.user.id == user.id:
-            form = NoteSearchForm()
-            search_name = request.GET.get('search_name')
+    #if request.user.is_authenticated:
+        #if request.user.id == user.id:
+            #form = NoteSearchForm()
+            #search_name = request.GET.get('search_name')
 
-            if search_name:
+            #if search_name:
                 #search for this note, display results
-                user_notes = Note.objects.filter(title__icontains=search_name).order_by('-posted_date')                  
+                #user_notes = Note.objects.filter(title__icontains=search_name).order_by('-posted_date')                  
 
-    user_shows = user.profile.shows_seen.all()
-    user_badges = user.profile.badges.all()
+    #user_shows = user.profile.shows_seen.all()
+    #user_badges = user.profile.badges.all()
 
-    return render(request, 'lmn/users/user_profile.html', { 'user_profile': user, 
-                                                            'shows_seen': user_shows, 
-                                                            'badges': user_badges, 
-                                                            'notes': user_notes,
-                                                            'form': form, 
-                                                            'search_term': search_name
+    return render(request, 'thebreeze_app/users/user_profile.html', { 'user_profile': user, 
+
                                                             })
 
 
