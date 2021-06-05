@@ -9,6 +9,7 @@ from .views import views_main
 urlpatterns = [
     
     path('', views_main.homepage, name='homepage'),
+    
     # User related
     path('user/profile/<int:user_pk>/', views_users.user_profile, name='user_profile'),
     path('user/profile/edit/<int:user_pk>/', views_users.edit_user, name='edit_user'),
