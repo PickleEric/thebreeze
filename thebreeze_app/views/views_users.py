@@ -32,7 +32,6 @@ def user_profile(request, user_pk):
     #user_badges = user.profile.badges.all()
 
     return render(request, 'thebreeze_app/users/user_profile.html', { 'user_profile': user, 
-
                                                             })
 
 
@@ -45,7 +44,7 @@ def edit_user(request, user_pk):
     user_form = UserForm(instance=user)
 
     # The sorcery begins from here, see explanation below
-    ProfileInlineFormset = inlineformset_factory(User, Profile, fields=('profile_image', 'shows_seen', 'bio', 'badges'), can_delete=False)
+    ProfileInlineFormset = inlineformset_factory(User, Profile, fields=('profile_image', 'bio'), can_delete=False)
     formset = ProfileInlineFormset(instance=user)
 
     if request.user.is_authenticated and request.user.id == user.id:
@@ -62,7 +61,7 @@ def edit_user(request, user_pk):
                     formset.save()
                     return redirect('user_profile', user_pk=request.user.pk)
 
-        return render(request, 'lmn/users/edit_user.html', { 'user_pk': user_pk,
+        return render(request, 'thebreeze_app/users/edit_user.html', { 'user_pk': user_pk,
                                                              'user_form': user_form,
                                                              'formset': formset,
                                                            })
