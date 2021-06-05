@@ -1,0 +1,73 @@
+{% extends 'lmn/base.html' %}
+{% block content %}
+{% load thumbnail %}
+
+
+<!-- A user's profile page.
+
+Includes list of user's notes with title and preview of text.
+Text truncated to 200 characters. 
+
+user_profile is the user that this profile is about 
+user is a variable provided to the template and is the current logged-in user 
+
+-->
+
+{% if messages %}
+    {% for message in messages %}
+    <h3 class='success-message'>{{ message }}</h3>
+    {% endfor %}
+
+{% endif %}
+
+
+{% if user.pk == user_profile.pk %}
+
+    <a href="{% url 'edit_user' user_pk=user.pk %}">Edit Profile</a>
+
+{% endif %}
+
+<h2>{{ user_profile.first_name }}'s Information</h2>
+<div class="container-fluid">
+  <div class="row" id='profile'>
+    <div class="col-md-8">
+      <h3>Profile Photo:</h3>
+          {% if user_profile.profile.profile_image %}
+          {% thumbnail user_profile.profile.profile_image "100x100" as im %}
+          <img src="{{ im.url }}">
+          {% endthumbnail %} 
+          {% else %}
+          <P>No profile image uploaded</p>
+          {% endif %}
+      </div>
+    </div>
+
+  <div class="row" id='profile'>
+    <div class="col-md-8">
+      <h3>Username: {{user_profile.username }}</h3>
+    </div>
+  </div>
+
+  <div class="row" id='profile'>
+    <div class="col-md-8">
+      <h3>Name: {{ user_profile.first_name }} {{ user_profile.last_name }}</h3>
+    </div>
+  </div>
+
+  <div class="row" id='profile'>
+    <div class="col-md-8">
+      <h3>Email: {{ user_profile.email }}</h3>
+    </div>
+  </div>
+
+  <div class="row" id='profile'>
+      <div class="col-md-8">
+        <span><h3>Bio:</h3> {{ user_profile.profile.bio }}</span>
+      </div>
+    </div>
+
+  <div class="row" id='profile'>
+    <div class="col-md-8">  
+      <h3>Social Media: TODO Implement social media.</h3>
+    </div>
+  </div>
