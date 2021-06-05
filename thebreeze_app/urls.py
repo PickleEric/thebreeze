@@ -2,14 +2,14 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 
 from . import views
-from .views import views_main
+from .views import views_main, views_users
 
 # app_name = 'thebreeze_app'
 
 urlpatterns = [
     
     path('', views_main.homepage, name='homepage'),
-    
+
     # User related
     path('user/profile/<int:user_pk>/', views_users.user_profile, name='user_profile'),
     path('user/profile/edit/<int:user_pk>/', views_users.edit_user, name='edit_user'),
