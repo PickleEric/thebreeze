@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from ..models import Note, Profile
+from ..models import Profile
 from ..forms import UserRegistrationForm, UserForm, NoteSearchForm
 
 from django.contrib.auth.decorators import login_required
