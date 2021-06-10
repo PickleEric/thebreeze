@@ -105,4 +105,4 @@ def register(request):
 # create request and render of goodbye html
 def goodbye(request):
     logout(request)
-    return render(request, 'lmn/users/goodbye_message.html')
+    return render(request, 'thebreeze_app/users/goodbye_message.html')
