@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 from ..models import Profile
-from ..forms import UserRegistrationForm, UserForm, NoteSearchForm
+from ..forms import UserRegistrationForm, UserForm
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
