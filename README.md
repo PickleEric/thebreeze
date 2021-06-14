@@ -1,6 +1,6 @@
 THE BREEZE
 
-'Let the breeze take you somewhere new.'
+'Let us take you somewhere new.'
 
 A guide to local restaurants with specific identifiers of which are 
 black owned, asian owned, dog friendly, etc. 
