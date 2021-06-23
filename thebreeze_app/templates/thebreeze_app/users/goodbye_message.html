@@ -1,0 +1,12 @@
+{% extends 'thebreeze_app/base.html' %}
+
+{% block content %}
+
+<div class="goodbye">
+    <h2>Thanks for stopping by.</h2>
+    <p>logout successful.</p>
+    <span id='login'><a  href="{% url 'login' %}?next={{ request.path }}">Login?</a></span>
+</div>
+
+
+{% endblock %}

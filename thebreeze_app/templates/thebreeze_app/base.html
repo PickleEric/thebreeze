@@ -9,8 +9,17 @@
 <body>
 <p>
     Some text here!
-</p>
 
+</p>
+<div id="right-login" >
+            {% if user.is_authenticated %}
+            <span id='welcome-user-msg'>You are logged in, <a href="{% url 'user_profile' user_pk=user.pk %}">{{ user.username }}</a> 
+               | <a href="{% url 'logout' %}">Logout</a></span>
+            {% else %}
+            <span id='login-or-sign-up' ><a href="{% url 'login' %}?next={{ request.path }}" >Login or sign up</a></span>
+            {% endif %}
+          </div>
+          
 {% block content %}
 {% endblock %} 
 </body>
